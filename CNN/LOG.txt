@@ -1,0 +1,38 @@
+Testing: Neutral
+Accuracy for Neutral : 0.326
+Label Present: 500
+Label Correct: 163
+
+Testing: Sad
+Accuracy for Sad : 0.596
+Label Present: 500
+Label Correct: 298
+
+Testing: Happy
+Accuracy for Happy : 0.92
+Label Present: 500
+Label Correct: 460
+
+Testing: Anger
+Accuracy for Anger : 0.35
+Label Present: 500
+Label Correct: 175
+
+Testing: Disgust
+Accuracy for Disgust : 0.0
+Label Present: 500
+Label Correct: 0
+
+Testing: Surprise
+Accuracy for Surprise : 0.116
+Label Present: 500
+Label Correct: 58
+
+Testing: Fear
+Accuracy for Fear : 0.088
+Label Present: 500
+Label Correct: 44
+
+Total Accuracy: 0.3422857142857143
+Total Present: 3500
+Total Correct: 1198
