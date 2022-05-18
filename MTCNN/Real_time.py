@@ -4,13 +4,14 @@ from sys import argv
 from os import listdir
 import time
 
+detector = FER()
+
 def save_image(array):
     cv2.imwrite("Capture.jpg", array)
 
 def get_emotion(img_path: str) -> str:
     try:
         img = cv2.imread(img_path)
-        detector = FER()
         emotions = detector.detect_emotions(img)
         # print(emotions)
         weights = emotions[0]['emotions']
