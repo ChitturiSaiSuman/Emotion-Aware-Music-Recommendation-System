@@ -40,4 +40,5 @@ if __name__ == '__main__':
             populate_emotion(emotion)
             populate_tracks(tracks)
         else:
-            streamlit.write("Could not find any face")
+            tag = '<h3 style="text-align: center;">No face detected</h3>'
+            streamlit.markdown(tag, unsafe_allow_html = True)
