@@ -89,7 +89,7 @@ def pre_process_cluster() -> dict:
     data = data[data['spotify_id'].notna()]
     labels, centroids = get_centroids()
     x = data.iloc[:, 5:8].values
-    k_means_optimum = KMeans(n_clusters = 7, init = centroids,  random_state = 50, tol = 1e-8)
+    k_means_optimum = KMeans(n_clusters = 7, n_init = 1, init = centroids,  random_state = 50, tol = 1e-8)
     y = k_means_optimum.fit_predict(x)
     data['cluster'] = y
     tracks = collections.defaultdict(list)
@@ -97,7 +97,7 @@ def pre_process_cluster() -> dict:
         spotify_id = row['spotify_id']
         cluster = row['cluster']
         tracks[labels[cluster]].append(spotify_id)
-        
+
     return tracks
 
 # Uncomment the following line for 
