@@ -1,4 +1,5 @@
 import numpy, pandas, collections, fer, random
+from sklearn.cluster import KMeans
 
 constants = {
     'Music_Dataset': 'Datasets/Music Recommendation/muse_v3.csv',
@@ -55,7 +56,15 @@ def map_emotion(valence: float, arousal: float, dominance: float) -> tuple:
             closest_emotion = emotion
     return (closest_emotion, min_distance)
 
-def pre_process_data() -> dict:
+def get_centroids() -> tuple:
+    coordinates = constants['coordinates']
+    coordinates = [(key, value) for key, value in coordinates.items()]
+    centroids = [list(item[1]) for item in coordinates]
+    centroids = numpy.array(centroids)
+    labels = [item[0] for item in coordinates]
+    return (labels, centroids)
+
+def pre_process_static() -> dict:
     dataframe = pandas.read_csv(constants['Music_Dataset'])
     dataframe = dataframe[['track', 'artist', 'genre', 'spotify_id',
                             'valence_tags', 'arousal_tags', 'dominance_tags']]
@@ -75,7 +84,34 @@ def pre_process_data() -> dict:
 
     return tracks
 
-tracks = pre_process_data()
+def pre_process_cluster() -> dict:
+    data = pandas.read_csv(constants['Music_Dataset'])
+    data = data[data['spotify_id'].notna()]
+    labels, centroids = get_centroids()
+    x = data.iloc[:, 5:8].values
+    k_means_optimum = KMeans(n_clusters = 7, init = centroids,  random_state = 50, tol = 1e-8)
+    y = k_means_optimum.fit_predict(x)
+    data['cluster'] = y
+    tracks = collections.defaultdict(list)
+    for index, row in data.iterrows():
+        spotify_id = row['spotify_id']
+        cluster = row['cluster']
+        tracks[labels[cluster]].append(spotify_id)
+    
+    for key in tracks:
+        print(tracks[key][:10])
+    return tracks
+
+# Uncomment the following line for 
+# static pre-processing
+# Static pre-processing uses defined coordinates
+
+# tracks = pre_process_static()
+
+# The following relies on KMeans
+# Clustering which gives better results
+
+tracks = pre_process_cluster()
 
 def get_top_k(emotion: str, k = 15, sample_size = 100) -> list:
     top_k = random.sample(tracks[emotion][:sample_size], k)
