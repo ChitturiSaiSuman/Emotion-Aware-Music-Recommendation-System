@@ -97,9 +97,7 @@ def pre_process_cluster() -> dict:
         spotify_id = row['spotify_id']
         cluster = row['cluster']
         tracks[labels[cluster]].append(spotify_id)
-    
-    for key in tracks:
-        print(tracks[key][:10])
+        
     return tracks
 
 # Uncomment the following line for 
