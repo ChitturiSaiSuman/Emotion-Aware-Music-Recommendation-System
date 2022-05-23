@@ -1,6 +1,5 @@
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
-import tensorflow as tf
 
 import numpy, pandas
 from sklearn.cluster import KMeans
@@ -96,7 +95,7 @@ def KMeans_divided_dataset(whole: pandas.DataFrame, train: pandas.DataFrame, tes
 
     print("Total Rows in Test Set: ", total_present)
     print("Total Correctly Classified: ", total_correct)
-    print("Accuracy: ", total_correct / total_present)
+    print("Accuracy: %.3f" %(100 * total_correct / total_present))
 
 
 if __name__ == '__main__':
