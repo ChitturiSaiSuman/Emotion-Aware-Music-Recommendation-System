@@ -1,5 +1,5 @@
 import os
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 import numpy, pandas
 from sklearn.cluster import KMeans
@@ -23,7 +23,7 @@ def get_static_centroids() -> tuple:
     labels = [item[0] for item in coordinates]
     return (labels, centroids)
 
-def split_dataframe(dataframe: pandas.DataFrame, train_size = 0.60):
+def split_dataframe(dataframe: pandas.DataFrame, train_size = 0.80):
     train_percent = int(train_size * 100)
     test_percent = 100 - train_percent
     print("Splitting Dataframe into Train ({} percent) and Test ({} percent) Set...".format(train_percent, test_percent))
@@ -101,10 +101,12 @@ def KMeans_divided_dataset(whole: pandas.DataFrame, train: pandas.DataFrame, tes
 if __name__ == '__main__':
     dataframe = get_data_frame()
 
-    # KMeansAll(dataframe.copy(deep = True))
+    KMeansAll(dataframe.copy(deep = True))
+    print()
 
-    # labels, centroids = get_static_centroids()
-    # KMeans_given_Initial_Centroids(dataframe.copy(deep = True), centroids)
+    labels, centroids = get_static_centroids()
+    KMeans_given_Initial_Centroids(dataframe.copy(deep = True), centroids)
+    print()
 
     train_df, test_df = split_dataframe(dataframe.copy(deep = True))
     KMeans_divided_dataset(dataframe.copy(deep = True), train_df, test_df)
