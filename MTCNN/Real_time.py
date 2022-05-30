@@ -22,7 +22,8 @@ def get_emotion(img_path: str) -> str:
         return 'No face'
 
 def real_time():
-    face_haar_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
+    arg = cv2.data.haarcascades + 'haarcascade_frontalface_default.xml'
+    face_haar_cascade = cv2.CascadeClassifier(arg)
     cap = cv2.VideoCapture(0)
     while True:
         ret, test_img = cap.read()
@@ -38,7 +39,8 @@ def real_time():
 
             predicted_emotion = get_emotion("Capture.jpg")
 
-            cv2.putText(test_img, predicted_emotion, (int(x), int(y)), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
+            cv2.putText(test_img, predicted_emotion,
+                        (int(x), int(y)), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
 
         resized_img = cv2.resize(test_img, (1000, 700))
         cv2.imshow('Facial emotion analysis ', resized_img)

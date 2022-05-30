@@ -4,12 +4,16 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 import numpy, pandas, collections, fer, random
 from sklearn.cluster import KMeans
 
+frame = '<iframe src="https://open.spotify.com/embed/track/{}" '
+frame += 'width="260" height="380" frameborder="0" allowtransparency="true" '
+frame += 'allow="encrypted-media"></iframe>'
+
 constants = {
     'Music_Dataset': 'Datasets/Music Recommendation/muse_v3.csv',
 
     'emotion_model': fer.FER(),
 
-    'frame': """<iframe src="https://open.spotify.com/embed/track/{}" width="260" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>""",
+    'frame': frame,
     
     'coordinates': {
         'angry': (2.50, 5.93, 5.14),
@@ -75,7 +79,8 @@ def pre_process_static() -> dict:
     tracks = collections.defaultdict(list)
 
     for index, row in dataframe.iterrows():
-        valence, arousal, dominance = map(float, [row['valence_tags'], row['arousal_tags'], row['dominance_tags']])
+        valence, arousal, dominance = map(float,
+                        [row['valence_tags'], row['arousal_tags'], row['dominance_tags']])
         spotify_id = row['spotify_id']
         if pandas.notna(spotify_id):
             emotion, distance = map_emotion(valence, arousal, dominance)
@@ -92,7 +97,8 @@ def pre_process_cluster() -> dict:
     data = data[data['spotify_id'].notna()]
     labels, centroids = get_centroids()
     x = data.iloc[:, 5:8].values
-    k_means_optimum = KMeans(n_clusters = 7, n_init = 1, init = centroids,  random_state = 50, tol = 1e-8)
+    k_means_optimum = KMeans(n_clusters = 7, n_init = 1,
+                            init = centroids,  random_state = 50, tol = 1e-8)
     y = k_means_optimum.fit_predict(x)
     data['cluster'] = y
     tracks = collections.defaultdict(list)

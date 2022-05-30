@@ -26,7 +26,9 @@ def get_static_centroids() -> tuple:
 def split_dataframe(dataframe: pandas.DataFrame, train_size = 0.80):
     train_percent = int(train_size * 100)
     test_percent = 100 - train_percent
-    print("Splitting Dataframe into Train ({} percent) and Test ({} percent) Set...".format(train_percent, test_percent))
+    info = "Splitting Dataframe into Train ({} \%) and Test ({} \%) Set..."
+    info = info.format(train_percent, test_percent)
+    print(info)
     train_dataframe = dataframe.sample(frac = train_size, random_state = 50)
     test_dataframe = dataframe.drop(train_dataframe.index)
     return (train_dataframe, test_dataframe)
@@ -34,32 +36,39 @@ def split_dataframe(dataframe: pandas.DataFrame, train_size = 0.80):
 def KMeansAll(dataframe: pandas.DataFrame):
     print("Performing K-Means Clustering without initial centroids...")
     x = dataframe.iloc[:, 5:8].values
-    k_means_optimum = KMeans(n_clusters = 7, n_init = 1, init = 'k-means++', random_state = 50, tol = 1e-8)
+    k_means_optimum = KMeans(n_clusters = 7, n_init = 1, init = 'k-means++',
+                            random_state = 50, tol = 1e-8)
     y = k_means_optimum.fit_predict(x)
     # dataframe['cluster'] = y
     score = silhouette_score(x, y)
     print("Silhouette score: ", score)
 
-def KMeans_given_Initial_Centroids(dataframe: pandas.DataFrame, centroids: numpy.array):
+def KMeans_given_Initial_Centroids(dataframe: pandas.DataFrame,
+                                   centroids: numpy.array):
     print("Performing K-Means Clustering with initial centroids...")
     x = dataframe.iloc[:, 5:8].values
-    k_means_optimum = KMeans(n_clusters = 7, n_init = 1, init = centroids, random_state = 50, tol = 1e-8)
+    k_means_optimum = KMeans(n_clusters = 7, n_init = 1,
+                            init = centroids, random_state = 50, tol = 1e-8)
     y = k_means_optimum.fit_predict(x)
     # dataframe['cluster'] = y
     score = silhouette_score(x, y)
     print("Silhouette score: ", score)
 
-def KMeans_divided_dataset(whole: pandas.DataFrame, train: pandas.DataFrame, test: pandas.DataFrame):
+def KMeans_divided_dataset(whole: pandas.DataFrame,
+                           train: pandas.DataFrame,
+                           test: pandas.DataFrame):
     print("Performing K-Means Clustering on Train and Test Dataset...")
     x = whole.iloc[:, 5:8].values
-    k_means_optimum = KMeans(n_clusters = 7, n_init = 1, init = 'k-means++', random_state = 50, tol = 1e-8)
+    k_means_optimum = KMeans(n_clusters = 7, n_init = 1, init = 'k-means++',
+                             random_state = 50, tol = 1e-8)
     y = k_means_optimum.fit_predict(x)
     whole['cluster'] = y
     original_centroids = k_means_optimum.cluster_centers_
     original_centroids = sorted([list(triple) for triple in original_centroids])
 
     train_x = train.iloc[:, 5:8].values
-    k_means_train = KMeans(n_clusters = 7, init = 'k-means++', random_state = 50, tol = 1e-8)
+    k_means_train = KMeans(n_clusters = 7, init = 'k-means++',
+                           random_state = 50, tol = 1e-8)
     y_train = k_means_train.fit_predict(train_x)
     train['cluster'] = y_train
     train_centroids = k_means_train.cluster_centers_
@@ -69,7 +78,8 @@ def KMeans_divided_dataset(whole: pandas.DataFrame, train: pandas.DataFrame, tes
     total_present = 0
 
     for row in test.itertuples():
-        valence, arousal, dominance = map(float, [row.valence_tags, row.arousal_tags, row.dominance_tags])
+        valence, arousal, dominance = map(float,
+                        [row.valence_tags, row.arousal_tags, row.dominance_tags])
         nearest1 = None
         nearest_distance = 10**10
         for i in range(len(original_centroids)):

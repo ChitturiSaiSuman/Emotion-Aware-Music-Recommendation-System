@@ -2,7 +2,7 @@ import numpy as np
 import tensorflow as tf
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
-from sklearn.metrics import confusion_matrix , classification_report 
+from sklearn.metrics import confusion_matrix , classification_report
 from sklearn.preprocessing import LabelBinarizer
 from sklearn.metrics import roc_curve, auc, roc_auc_score
 
@@ -28,8 +28,11 @@ model = tf.keras.models.load_model('best_model.h5')
 
 def get_emotion(path: str) -> str:
     preprocess_fun = tf.keras.applications.densenet.preprocess_input
-    test_datagen = ImageDataGenerator(rescale = 1./255, validation_split = 0.2, preprocessing_function = preprocess_fun)
-    test_generator = test_datagen.flow_from_directory(directory = path, target_size = (IMG_HEIGHT,IMG_WIDTH), batch_size = BATCH_SIZE, shuffle = False, color_mode = "rgb", class_mode = "categorical", seed = 12)
+    test_datagen = ImageDataGenerator(rescale = 1./255,
+                                    validation_split = 0.2, preprocessing_function = preprocess_fun)
+    test_generator = test_datagen.flow_from_directory(directory = path,
+                                    target_size = (IMG_HEIGHT,IMG_WIDTH), batch_size = BATCH_SIZE,
+                                    shuffle = False, color_mode = "rgb", class_mode = "categorical", seed = 12)
     results = model.predict(test_generator)
     freq = [0] * 7
     for result in results:

@@ -19,12 +19,15 @@ def populate_tracks(tracks: list) -> None:
 
 def populate_emotion(emotion: str) -> None:
     left_color = UTILS.constants['colors']['left']
-    left_span = '<span style = "color: {}">Identified Emotion: </span>'.format(left_color)
+    left_span = '<span style = "color: {}">Identified Emotion: </span>'
+    left_span = left_span.format(left_color)
 
     emotion_color = UTILS.constants['colors'][emotion]
-    right_span = '<span style = "color: {}">{}</span>'.format(emotion_color, emotion.capitalize())
+    right_span = '<span style = "color: {}">{}</span>'
+    right_span = right_span.format(emotion_color, emotion.capitalize())
     
-    tag = "<h2 style='text-align: center;'>{}</h2>".format(left_span + right_span)
+    tag = "<h2 style='text-align: center;'>{}</h2>"
+    tag = tag.format(left_span + right_span)
     streamlit.markdown(tag, unsafe_allow_html=True)
 
 if __name__ == '__main__':

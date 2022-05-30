@@ -18,7 +18,8 @@ def get_emotion(img_path: str) -> str:
         return 'No face'
 
 def custom_check():
-    face_haar_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
+    arg = cv2.data.haarcascades + 'haarcascade_frontalface_default.xml'
+    face_haar_cascade = cv2.CascadeClassifier(arg)
 
     for image in listdir('Custom/'):
         emotion = get_emotion('Custom/' + image)
@@ -29,8 +30,10 @@ def custom_check():
             faces_detected = face_haar_cascade.detectMultiScale(gray_img, 1.32, 5)
 
             for (x, y, w, h) in faces_detected:
-                cv2.rectangle(test_img, (x, y), (x + w, y + h), (255, 0, 0), thickness = 7)
-                cv2.putText(test_img, emotion, (int(x), int(y)), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
+                cv2.rectangle(test_img, (x, y), (x + w, y + h),
+                                (255, 0, 0), thickness = 7)
+                cv2.putText(test_img, emotion, (int(x), int(y)),
+                                cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
 
             resized_img = cv2.resize(test_img, (1000, 700))
             cv2.imshow('Facial emotion analysis ', resized_img)

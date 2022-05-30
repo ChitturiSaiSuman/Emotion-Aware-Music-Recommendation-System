@@ -40,7 +40,8 @@ def main():
                     total_correct += 1
                 label_present += 1
                 total_present += 1
-            print("Accuracy for", label, ":", label_correct / label_present,flush = True)
+            accuracy = label_correct / label_present
+            print("Accuracy for", label, ":", accuracy, flush = True)
             print("Label Present:", label_present,flush = True)
             print("Label Correct:", label_correct,flush = True)
             print("",flush = True)
