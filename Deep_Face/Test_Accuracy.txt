@@ -4,183 +4,183 @@ Processed 1000 images so far
 Current Accuracy: 0.348
 
 Processed 2000 images so far
-Current Accuracy: 0.3555
+Current Accuracy: 0.355
 
 Processed 3000 images so far
 Current Accuracy: 0.362
 
 Processed 4000 images so far
-Current Accuracy: 0.35475
+Current Accuracy: 0.355
 
 Processed 5000 images so far
 Current Accuracy: 0.351
 
 Processed 6000 images so far
-Current Accuracy: 0.3491666666666667
+Current Accuracy: 0.349
 
 Processed 7000 images so far
-Current Accuracy: 0.34514285714285714
+Current Accuracy: 0.345
 
 Processed 8000 images so far
-Current Accuracy: 0.34575
+Current Accuracy: 0.345
 
 Processed 9000 images so far
-Current Accuracy: 0.3443333333333333
+Current Accuracy: 0.344
 
 Processed 10000 images so far
-Current Accuracy: 0.3442
+Current Accuracy: 0.344
 
 Processed 11000 images so far
-Current Accuracy: 0.3441818181818182
+Current Accuracy: 0.344
 
 Processed 12000 images so far
-Current Accuracy: 0.34491666666666665
+Current Accuracy: 0.344
 
 Processed 13000 images so far
-Current Accuracy: 0.3457692307692308
+Current Accuracy: 0.345
 
-Accuracy for Neutral: 0.3457572748797067
+Accuracy for Neutral: 0.345
 Details: 4527/13093
 
 Currently Testing Sad
 
 Processed 14000 images so far
-Current Accuracy: 0.3387857142857143
+Current Accuracy: 0.338
 
 Processed 15000 images so far
-Current Accuracy: 0.33066666666666666
+Current Accuracy: 0.330
 
 Processed 16000 images so far
-Current Accuracy: 0.3233125
+Current Accuracy: 0.323
 
 Processed 17000 images so far
-Current Accuracy: 0.3179411764705882
+Current Accuracy: 0.317
 
-Accuracy for Sad: 0.22389048355045263
+Accuracy for Sad: 0.223
 Details: 1014/4529
 
 Currently Testing Happy
 
 Processed 18000 images so far
-Current Accuracy: 0.31883333333333336
+Current Accuracy: 0.318
 
 Processed 19000 images so far
-Current Accuracy: 0.33
+Current Accuracy: 0.330
 
 Processed 20000 images so far
-Current Accuracy: 0.3386
+Current Accuracy: 0.338
 
 Processed 21000 images so far
-Current Accuracy: 0.3476666666666667
+Current Accuracy: 0.347
 
 Processed 22000 images so far
-Current Accuracy: 0.35568181818181815
+Current Accuracy: 0.355
 
 Processed 23000 images so far
-Current Accuracy: 0.3637391304347826
+Current Accuracy: 0.363
 
 Processed 24000 images so far
-Current Accuracy: 0.36995833333333333
+Current Accuracy: 0.369
 
 Processed 25000 images so far
-Current Accuracy: 0.3768
+Current Accuracy: 0.376
 
 Processed 26000 images so far
-Current Accuracy: 0.3815769230769231
+Current Accuracy: 0.381
 
 Processed 27000 images so far
-Current Accuracy: 0.3864814814814815
+Current Accuracy: 0.386
 
 Processed 28000 images so far
-Current Accuracy: 0.3906428571428571
+Current Accuracy: 0.390
 
 Processed 29000 images so far
-Current Accuracy: 0.39541379310344826
+Current Accuracy: 0.395
 
 Processed 30000 images so far
-Current Accuracy: 0.40013333333333334
+Current Accuracy: 0.400
 
 Processed 31000 images so far
-Current Accuracy: 0.4042258064516129
+Current Accuracy: 0.404
 
 Processed 32000 images so far
-Current Accuracy: 0.40790625
+Current Accuracy: 0.407
 
 Processed 33000 images so far
-Current Accuracy: 0.4112121212121212
+Current Accuracy: 0.411
 
 Processed 34000 images so far
-Current Accuracy: 0.41455882352941176
+Current Accuracy: 0.414
 
 Processed 35000 images so far
-Current Accuracy: 0.4178857142857143
+Current Accuracy: 0.417
 
 Processed 36000 images so far
-Current Accuracy: 0.4211388888888889
+Current Accuracy: 0.421
 
 Processed 37000 images so far
-Current Accuracy: 0.42427027027027026
+Current Accuracy: 0.424
 
 Processed 38000 images so far
-Current Accuracy: 0.42778947368421055
+Current Accuracy: 0.427
 
 Processed 39000 images so far
-Current Accuracy: 0.43035897435897436
+Current Accuracy: 0.430
 
 Processed 40000 images so far
-Current Accuracy: 0.4332
+Current Accuracy: 0.433
 
-Accuracy for Happy: 0.5258306538049303
+Accuracy for Happy: 0.525
 Details: 12265/23325
 
 Currently Testing Anger
 
 Processed 41000 images so far
-Current Accuracy: 0.4345609756097561
+Current Accuracy: 0.434
 
 Processed 42000 images so far
-Current Accuracy: 0.42807142857142855
+Current Accuracy: 0.428
 
 Processed 43000 images so far
-Current Accuracy: 0.4223255813953488
+Current Accuracy: 0.422
 
 Processed 44000 images so far
-Current Accuracy: 0.41647727272727275
+Current Accuracy: 0.416
 
 Processed 45000 images so far
-Current Accuracy: 0.4112
+Current Accuracy: 0.411
 
-Accuracy for Anger: 0.17269355586462679
+Accuracy for Anger: 0.172
 Details: 745/4314
 
 Currently Testing Disgust
 
-Accuracy for Disgust: 0.0547945205479452
+Accuracy for Disgust: 0.054
 Details: 36/657
 
 Currently Testing Surprise
 
 Processed 46000 images so far
-Current Accuracy: 0.4041739130434783
+Current Accuracy: 0.404
 
 Processed 47000 images so far
-Current Accuracy: 0.39772340425531916
+Current Accuracy: 0.397
 
 Processed 48000 images so far
-Current Accuracy: 0.3912083333333333
+Current Accuracy: 0.391
 
-Accuracy for Surprise: 0.09164191769198134
+Accuracy for Surprise: 0.091
 Details: 216/2357
 
 Currently Testing Fear
 
 Processed 49000 images so far
-Current Accuracy: 0.386734693877551
+Current Accuracy: 0.386
 
-Accuracy for Fear: 0.20435967302452315
+Accuracy for Fear: 0.204
 Details: 225/1101
 
-Total Accuracy: 0.3853694102397926
+Total Accuracy: 0.385
 Total Correct: 19028
 Total Present: 49376
 

@@ -8,7 +8,7 @@ Currently Testing Sad
 Processed 1000 images so far
 Current Accuracy: 0.269
 
-Accuracy for Sad: 0.19
+Accuracy for Sad: 0.190
 Details: 95/500
 
 Currently Testing Happy
@@ -32,7 +32,7 @@ Details: 18/500
 Currently Testing Surprise
 
 Processed 3000 images so far
-Current Accuracy: 0.22733333333333333
+Current Accuracy: 0.227
 
 Accuracy for Surprise: 0.076
 Details: 38/500

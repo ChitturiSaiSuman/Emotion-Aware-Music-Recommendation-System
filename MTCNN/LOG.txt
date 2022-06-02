@@ -9,7 +9,7 @@ Label Present: 500
 Label Correct: 187
 
 Testing: Happy
-Accuracy for Happy : 0.69
+Accuracy for Happy : 0.690
 Label Present: 500
 Label Correct: 345
 
@@ -33,6 +33,6 @@ Accuracy for Fear : 0.336
 Label Present: 500
 Label Correct: 168
 
-Total Accuracy: 0.3588571428571429
+Total Accuracy: 0.358
 Total Present: 3500
 Total Correct: 1256
