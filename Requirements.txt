@@ -1,0 +1,19 @@
+nstall pip manager (sudo apt-get -y install python3-pip)
+Install stramlit (sudo pip3 install streamlit)
+sudo pip3 install fer
+sudo pip3 install tensorflow
+sudo pip3 install sklearn
+
+
+To run the application (streamlit run App.py)
+
+
+
+
+
+Last.FM Million song dataset, we have taken subset from this dataset which is 99k set and we are storing them in muse_v3.csv.
+
+Valence, Arousal, Dominance determine the emotion of song.
+
+
+Numpy.ND array
