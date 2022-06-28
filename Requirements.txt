@@ -6,4 +6,4 @@ sudo pip3 install sklearn
 
 To run the application (streamlit run App.py)
 
-muse_v3.csv should be present.
+Datasets/Music Recommendation/muse_v3.csv should be present.
